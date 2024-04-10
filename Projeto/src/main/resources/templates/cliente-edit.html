@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Cliente</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <h1>Editar Cliente</h1>
+
+  <form action="/clientes/edit" method="post">
+    <input type="hidden" name="id" th:value="${cl.id}">
+
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" th:value="${cl.nome}" required>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" th:value="${cl.email}" required>
+
+    <label for="dataNascimento">Data de Nascimento</label>
+    <input type="text" name="dataNascimento" id="dataNascimento" th:value="${cl.dataNascimento}" required>
+
+    <label for="telefone">Telefone</label>
+    <input type="text" name="telefone" id="telefone" th:value="${cl.telefone}" required>
+
+    <label for="cpf">CPF</label>
+    <input type="text" name="cpf" id="cpf" th:value="${cl.cpf}" required>
+
+    <button>Enviar</button>
+  </form>
+
+  <a href="/clientes">Voltar</a>
+</body>
+
+</html>

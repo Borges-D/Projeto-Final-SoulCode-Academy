@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente</title>
+</head>
+
+<body>
+  <h1 th:text="${cl.nome}"></h1>
+  <p th:text="${cl.email}"></p>
+  <p>Data Nascimento: <span th:text="${cl.dataNascimento}"></span></p>
+  <p>Telefone: <span th:text="${cl.telefone}"></span></p>
+  <p>CPF: <span th:text="${cl.cpf}"></span></p>
+  <a href="/clientes">Voltar</a>
+</body>
+
+</html>

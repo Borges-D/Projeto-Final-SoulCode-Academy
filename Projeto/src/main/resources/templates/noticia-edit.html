@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edição de Notícias</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <h1>Editar Notícias</h1>
+
+  <form action="/noticias/edit" method="post">
+
+    <input type="hidden" name="id" th:value="${thenews.id}">
+
+    <label for="titulo">Titulo</label>
+    <input type="text" name="titulo" id="titulo" th:value="${thenews.titulo}" required>
+
+    <label for="conteudo">Conteudo</label>
+    <input type="text" name="conteudo" id="conteudo" th:value="${thenews.conteudo}">
+
+    <label for="categoria">Categoria</label>
+    <input type="text" name="categoria" id="categoria" th:value="${thenews.categoria}" required>
+
+    <label for="topico">Assunto</label>
+    <input type="text" name="topico" id="topico" th:value="${thenews.topico}" required>
+
+    <label for="data_publicacao">Data da Publicação</label>
+    <input type="date" name="data_publicacao" id="data_publicacao" th:value="${thenews.dataPublicacao}" required>
+
+    <label for="url_imagem">URL Imagem</label>
+    <input type="text" name="url_imagem" id="url_imagem" th:value="${thenews.url_imagem}">
+
+    <button>Enviar</button>
+
+  </form>
+
+  <a href="/noticias">Voltar</a>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"> -->
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes</title>
+</head>
+
+<body>
+  <h1>Clientes</h1>
+  <p>Lista de clientes.</p>
+  <a href="/">Home</a>
+
+  <div class="gerenciamento">
+    <table>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Data de Nascimento</th>
+        <th>Telefone</th>
+        <th>CPF</th>
+        <th>Excluir</th>
+        <th>Editar</th>
+      </tr>
+      <tbody>
+        <tr th:each="cliente : ${cls}">
+          <td>
+            <a th:href="'/clientes/' + ${cliente.id}" th:text="${cliente.nome}"></a>
+          </td>
+          <td th:text="${cliente.email}"></td>
+          <td th:text="${cliente.dataNascimento}"></td>
+          <td th:text="${cliente.telefone}"></td>
+          <td th:text="${cliente.cpf}"></td>
+          <td>
+            <form action="/clientes/delete" method="post">
+              <input type="hidden" name="id" th:value="${cliente.id}">
+              <button>Excluir</button>
+            </form>
+          </td>
+          <td>
+            <a th:href="'/clientes/' + ${cliente.id}+'/edit'">
+              <button>Editar</button>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Novo Cliente</h2>
+  <form action="/clientes" method="post">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" required>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="nascimento">Data de Nascimento</label>
+    <input type="date" name="nascimento" id="nascimento" required>
+
+    <label for="telefone">Telefone</label>
+    <input type="tel" name="telefone" id="telefone" required>
+
+    <label for="cpf">CPF</label>
+    <input type="number" name="cpf" id="cpf" required>
+
+
+
+    <button>Enviar</button>
+  </form>
+
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
